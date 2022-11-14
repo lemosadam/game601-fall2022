@@ -152,11 +152,11 @@ Return to the [[Titlescreen]] Screen?</tw-passagedata><tw-passagedata pid="22" n
 </tw-passagedata><tw-passagedata pid="23" name="Approach Wallace" tags="" position="2150,700" size="100,100">Wallace, the salty, old fisherman sits in the corner smoking a pipe.
 
 (set: $visitedWallace to false)
+(set: $WallaceisDrunk to false)
+(set: $WallaceisTipsy to false)
 
 (if: $visitedWallace is false) [ [[Greet Wallace]]. ]
 
-(set: $WallaceisTipsy to false)
-(set: $WallaceisDrunk to false)
 
 (if: $ales is &gt; 0) [  Slide the ale across the table to him. &quot;Mind if I join you?&quot; [[Take a seat.]] ]
 
@@ -192,13 +192,12 @@ Back to [[The Pearl Dive]].
 
 (if: $gold is &gt; 2 and $WallaceisDrunk is false)[ [[&quot;Deal.&quot; Slide him the three gold pieces.]] ]
 
-(if: $gold is &gt; 1 and $WallaceisTipsy is true) [ [[&quot;I&#39;ll give you 2.&quot;]] Offer him three gold pieces. ]
+(if: $gold is &gt; 1 and $WallaceisTipsy is true) [ [[&quot;I&#39;ll give you 2.&quot;]] You&#39;ve coaxed him with ale and feel you can haggle. Offer him two gold pieces. ]
 
 (if: $WallaceisDrunk is true) [ You think the man might be just drunk enough to persuade... [[&quot;Come on... Just one quick trip out there...&quot;]] ]
 
 (if: $gold is &lt; 3)[ [[I can&#39;t afford that.]] (set: $visitedWallace to true) ]
-
-</tw-passagedata><tw-passagedata pid="30" name="&quot;Deal.&quot; Slide him the three gold pieces." tags="" position="2900,350" size="100,100">Wallace snatches up the gold pieces with surprising dexterity. &quot;Alright then. [[When should we depart?]]&quot;</tw-passagedata><tw-passagedata pid="31" name="I can&#39;t afford that." tags="" position="2825,675" size="100,100">Back to [[The Pearl Dive]]</tw-passagedata><tw-passagedata pid="32" name="&quot;I&#39;ll give you 2.&quot;" tags="" position="2875,550" size="100,100">Wallace sucks his teeth and grunts. &quot;Stingy... but you did buy me the ale so... sure. Why not. [[When should we depart?]]&quot;</tw-passagedata><tw-passagedata pid="33" name="Buy another round" tags="" position="2600,950" size="100,100">You buy another round for yourself and Wallace. Then, another... and another...
+</tw-passagedata><tw-passagedata pid="30" name="&quot;Deal.&quot; Slide him the three gold pieces." tags="" position="2900,350" size="100,100">Wallace snatches up the gold pieces with surprising dexterity. &quot;Alright then. [[When should we depart?]]&quot;</tw-passagedata><tw-passagedata pid="31" name="I can&#39;t afford that." tags="" position="2825,675" size="100,100">Back to [[The Pearl Dive]]</tw-passagedata><tw-passagedata pid="32" name="&quot;I&#39;ll give you 2.&quot;" tags="" position="2875,550" size="100,100">Wallace sucks his teeth and grunts. &quot;Stingy... but you did buy me the ale so... sure. Why not. &quot;[[When should we depart?]]&quot;</tw-passagedata><tw-passagedata pid="33" name="Buy another round" tags="" position="2600,950" size="100,100">You buy another round for yourself and Wallace. Then, another... and another...
 
 (set: $WallaceisDrunk to true)
 (set: $WallaceisTipsy to false)
@@ -230,7 +229,7 @@ Everything goes black.
 
 [[Leave at nightfall.]] You need to see those lights for yourself.
 
-[[Leave while it&#39;s still light out.]]</tw-passagedata><tw-passagedata pid="38" name="Leave at nightfall." tags="" position="3075,775" size="100,100">You and Wallace decide to wait until night has fallen to row out to the island. The strange lights seem to be causing the disturbances so best to see them up close.
+[[Leave while it&#39;s still light out.]] You don&#39;t want to get close to that island at night.</tw-passagedata><tw-passagedata pid="38" name="Leave at nightfall." tags="" position="3075,775" size="100,100">You and Wallace decide to wait until night has fallen to row out to the island. The strange lights seem to be causing the disturbances so best to see them up close.
 
 You and Wallace row out to the small island in the center of the lake. The water is choppy and the fog is dense, but Wallace is skilled at navigating the lake. Soon, you arrive at the small island. 
 
