@@ -72,12 +72,12 @@ She may need a little more incentive to help... or maybe you should quit while y
 [[Let her escort you out.]]
 </tw-passagedata><tw-passagedata pid="12" name="Slide a coin across her desk, &quot;Know anything about those weird lights on the island?&quot;" tags="" position="1975,100" size="100,100">Penelope stares at the coin for a moment before looking at you in disgust. &quot;I don&#39;t know what you think I could possibly have to do with those. Or the Mayor, for that matter. You&#39;d better leave,&quot; she stands abruptly and moves to escort you out.
 
-[[Pull out two more gold coins. &quot;I&#39;ll make it worth your while...]]
+[[Pull out two more gold coins. &quot;I&#39;ll make it worth your while...&quot;]]
 
-[[&quot;Please, Penelope, I need answers... for Jeremy&#39;s sake.]]
+[[&quot;Please, Penelope, I need answers... for Jeremy&#39;s sake.&quot;]]
 
 [[Let her escort you out.]]
-</tw-passagedata><tw-passagedata pid="13" name="Pull out two more gold coins. &quot;I&#39;ll make it worth your while..." tags="" position="2375,200" size="100,100">Penelope cries out in disgust and slaps your hand away. The gold coins go scattering across the floor. You don&#39;t even have time to reach for them before she has shoved you towards the door. &quot;Get. &#39;&#39;OUT!&#39;&#39;&quot;
+</tw-passagedata><tw-passagedata pid="13" name="Pull out two more gold coins. &quot;I&#39;ll make it worth your while...&quot;" tags="" position="2375,200" size="100,100">Penelope cries out in disgust and slaps your hand away. The gold coins go scattering across the floor. You don&#39;t even have time to reach for them before she has shoved you towards the door. &quot;Get. &#39;&#39;OUT!&#39;&#39;&quot;
 
 You lose 3 gold coins.
 
@@ -85,7 +85,7 @@ Time to see what you can find out on your own.
 
 [[Head to the docks.]]
 
-(set: $gold to 5)</tw-passagedata><tw-passagedata pid="14" name="&quot;Please, Penelope, I need answers... for Jeremy&#39;s sake." tags="" position="2300,50" size="100,100">Penelope hesitates. She glances at the door. &quot;I... I don&#39;t know much. Just that the Mayor is &#39;&#39;scared&#39;&#39; of that island. Especially those lights... Just promise you won&#39;t go out there at night, okay? He&#39;s figuring it out, I promise...&quot;
+(set: $gold to $gold-3)</tw-passagedata><tw-passagedata pid="14" name="&quot;Please, Penelope, I need answers... for Jeremy&#39;s sake.&quot;" tags="" position="2300,50" size="100,100">Penelope hesitates. She glances at the door. &quot;I... I don&#39;t know much. Just that the Mayor is &#39;&#39;scared&#39;&#39; of that island. Especially those lights... Just promise you won&#39;t go out there at night, okay? He&#39;s figuring it out, I promise...&quot;
 
 (set: $tipfromP to true)
 
@@ -151,7 +151,12 @@ Return to the [[Titlescreen]] Screen?</tw-passagedata><tw-passagedata pid="22" n
 
 </tw-passagedata><tw-passagedata pid="23" name="Approach Wallace" tags="" position="2150,700" size="100,100">Wallace, the salty, old fisherman sits in the corner smoking a pipe.
 
+(set: $visitedWallace to false)
+
 (if: $visitedWallace is false) [ [[Greet Wallace]]. ]
+
+(set: $WallaceisTipsy to false)
+(set: $WallaceisDrunk to false)
 
 (if: $ales is &gt; 0) [  Slide the ale across the table to him. &quot;Mind if I join you?&quot; [[Take a seat.]] ]
 
@@ -189,13 +194,13 @@ Back to [[The Pearl Dive]].
 
 (if: $gold is &gt; 1 and $WallaceisTipsy is true) [ [[&quot;I&#39;ll give you 2.&quot;]] Offer him three gold pieces. ]
 
-(if: $WallaceisDrunk is true) [ You think the man might be just drunk enough to persuade... [[&quot;Come on... Just one quick trip out there...&quot;]]
+(if: $WallaceisDrunk is true) [ You think the man might be just drunk enough to persuade... [[&quot;Come on... Just one quick trip out there...&quot;]] ]
 
 (if: $gold is &lt; 3)[ [[I can&#39;t afford that.]] (set: $visitedWallace to true) ]
 
 </tw-passagedata><tw-passagedata pid="30" name="&quot;Deal.&quot; Slide him the three gold pieces." tags="" position="2900,350" size="100,100">Wallace snatches up the gold pieces with surprising dexterity. &quot;Alright then. [[When should we depart?]]&quot;</tw-passagedata><tw-passagedata pid="31" name="I can&#39;t afford that." tags="" position="2825,675" size="100,100">Back to [[The Pearl Dive]]</tw-passagedata><tw-passagedata pid="32" name="&quot;I&#39;ll give you 2.&quot;" tags="" position="2875,550" size="100,100">Wallace sucks his teeth and grunts. &quot;Stingy... but you did buy me the ale so... sure. Why not. [[When should we depart?]]&quot;</tw-passagedata><tw-passagedata pid="33" name="Buy another round" tags="" position="2600,950" size="100,100">You buy another round for yourself and Wallace. Then, another... and another...
 
-(set: $WallaceisDrunk to true.)
+(set: $WallaceisDrunk to true)
 (set: $WallaceisTipsy to false)
 
 (set: $gold to $gold-2)
